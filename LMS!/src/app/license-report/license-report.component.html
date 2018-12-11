@@ -1,0 +1,30 @@
+<div class="button-row">
+    <a [routerLink]="['/LADetails']"><mat-icon>l<i class="glyphicon glyphicon-new-window"></i>ist</mat-icon></a>
+  <!-- <a mat-raised-button color="primary" [routerLink]="['/LADetails']"><mat-icon>list</mat-icon></a> -->
+</div>
+
+<!-- <button type="button" (click) ="pdf()">Pdf</button> -->
+<mat-card class="example-card center">
+  <mat-card-header>
+    <mat-card-title class="center"><h2>{{Intent.firstname}} {{Intent.lastname}}</h2></mat-card-title>
+    <mat-card-subtitle class="center">{{Intent.contact}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>FirstName:</dt><dd>{{Intent.firstname}}</dd>
+      <dt>LastName:</dt><dd>{{Intent.lastname}}</dd>
+      <dt>Company:</dt><dd>{{Intent.company}}</dd>
+      <dt>RoxCode:</dt><dd>{{Intent.roxcode}}</dd>
+      <dt>License:</dt><dd>{{Intent.license}}</dd>
+      <dt>Email:</dt><dd>{{Intent.email}}</dd>
+      <dt>Contact:</dt><dd>{{Intent.contact}}</dd>
+      <dt>User_Join_Date:</dt><dd>{{Intent.updated_date}}</dd>
+    
+     
+    </dl>
+  </mat-card-content>
+  <!-- <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/intent-edit', Intent._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteIntent(Intent._id)"><mat-icon>delete</mat-icon></a> -->
+  <!-- </mat-card-actions>  -->
+</mat-card>

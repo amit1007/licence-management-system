@@ -1,0 +1,111 @@
+<mat-sidenav-container class="sidenav-container">
+    <mat-sidenav
+      #drawer
+      class="sidenav"
+      fixedInViewport="true"frmAlert
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="!(isHandset$ | async)">
+      <mat-toolbar color="accent">LMS<i class="material-icons">vpn_key
+          </i></mat-toolbar>
+      <mat-nav-list>
+          <a mat-list-item routerLink="/Dashbord">Dashboard</a> 
+        <a mat-list-item routerLink="/login">LMS Login</a>
+          <a mat-list-item routerLink="/customer">Free Trial</a>
+          <a mat-list-item routerLink="/PaidLicense">Subscrib License</a> 
+          <a mat-list-item routerLink="/Renew">Renew License</a> 
+          <a mat-list-item routerLink="/euserLicense">Sub User Login</a> 
+          <!-- <a mat-list-item routerLink="/Register"></a> -->
+  
+          <!-- <a mat-List-item routerLink="/app-cross-verify">Validation</a> -->
+          
+  
+        </mat-nav-list>     
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="accent">
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">list</mat-icon>
+        </button>
+        
+        <a mat-button 
+        #rla1="routerLinkActive" 
+        routerLinkActive="active" 
+        [color]="rla1.isActive ? 'primary' : ''" 
+        [routerLinkActiveOptions]="{exact: true}" 
+        routerLink="/login">Home
+        <mat-icon aria-label="Side nav toggle icon">home</mat-icon>
+      </a>
+  
+
+      <a mat-button 
+        #rla2="routerLinkActive" 
+        routerLinkActive="active" 
+        [color]="rla2.isActive ? 'accent' : ''"
+        [routerLinkActiveOptions]="{exact: true}"
+        routerLink="/LADetails">License Activation
+        <mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>
+      </a>
+
+      <a mat-button 
+        #rla3="routerLinkActive" 
+        routerLinkActive="active" 
+        [color]="rla3.isActive ? 'accent' : ''"
+        [routerLinkActiveOptions]="{exact: true}" 
+        routerLink="/">License Renew
+        <!-- <mat-icon aria-label="Side nav toggle icon">notification_important</mat-icon> -->
+        <!-- <mat-icon aria-label="Side nav toggle icon">library_books</mat-icon> -->
+        <i class="material-icons">autorenew</i>
+      </a>
+
+      <a mat-button 
+        #rla4="routerLinkActive"
+        routerLinkActive="active"
+        [color]="rla4.isActive ? 'accent' : ''" 
+        [routerLinkActiveOptions]="{exact: true}" 
+        routerLink="/ShowQlikUtilities">license History
+        <!-- <mat-icon aria-label="Side nav toggle icon">view_list</mat-icon> -->
+        <i class="material-icons">history</i>
+      </a>
+
+      <a mat-button 
+      #rla5="routerLinkActive"
+      routerLinkActive="active"
+      [color]="rla5.isActive ? 'accent' : ''" 
+      [routerLinkActiveOptions]="{exact: true}" 
+      routerLink="/sources">Issue Lisense
+      <mat-icon aria-label="Side nav toggle icon">notification_important</mat-icon>
+    </a>
+
+    <a mat-button 
+      #rla6="routerLinkActive"
+      routerLinkActive="active"
+      [color]="rla6.isActive ? 'accent' : ''" 
+      [routerLinkActiveOptions]="{exact: true}" 
+      routerLink="/license-report">License Report
+      <mat-icon aria-label="Side nav toggle icon">list</mat-icon>
+    </a>
+
+    <a mat-button 
+    #rla7="routerLinkActive" 
+    routerLinkActive="active" 
+    [color]="rla7.isActive ? 'accent' : ''"
+    [routerLinkActiveOptions]="{exact: true}"
+    routerLink="/freeusers">Free users
+    <mat-icon aria-label="Side nav toggle icon">account_circle</mat-icon>
+    <!-- <mat-icon aria-label="Side nav toggle icon">view_list</mat-icon> -->
+  </a>
+
+
+  </mat-toolbar>
+
+      <router-outlet></router-outlet>
+      <!-- <QuestionListModels></QuestionListModels> -->
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  

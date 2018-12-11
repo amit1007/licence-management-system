@@ -1,0 +1,38 @@
+<br>
+<br>
+
+
+<div class=" well well well-lg col-lg-6 col-lg-offset-3">
+        <h3 class="text-center">LMS Register</h3>
+<form [formGroup]="userForm" (ngSubmit)="onFormSubmit(userForm.value)">
+
+
+<mat-form-field class="example-full-width">
+<input matInput placeholder="UserName" formControlName="company"
+        [errorStateMatcher]="matcher">
+<mat-error>
+    <span *ngIf="!userForm.get('company').valid && userForm.get('company').touched">Please enter UserName</span>
+</mat-error>
+</mat-form-field>
+  
+    
+
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Password" formControlName="roxcode"
+               [errorStateMatcher]="matcher">
+        <mat-error>
+          <span *ngIf="!userForm.get('roxcode').valid && userForm.get('roxcode').touched">Please enter Password</span>
+        </mat-error>
+      </mat-form-field>
+
+      <div class="button-row">
+          <a mat-raised-button 
+          color= "slateblue" >Login</a>
+        </div>
+      <a mat-raised-button
+       color= "slateblue" 
+       [routerLink]="['/Register']">Register</a>
+
+  </form>
+ 
+</div>

@@ -1,0 +1,49 @@
+<br>
+<div class="button-row">
+        <a [routerLink]="['/login']"><mat-icon>l<i class="glyphicon glyphicon-new-window"></i>ist</mat-icon></a>
+        <!-- <a mat-raised-button color="primary" [routerLink]="['/login']"><mat-icon>list</mat-icon></a> -->
+      </div>
+      <div class=" well well well-lg col-lg-6 col-lg-offset-3">
+            <h3 class="text-center">LMS Register</h3>
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit(userForm.value)">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="FirstName" formControlName="firstname"
+            [errorStateMatcher]="matcher">
+        <mat-error>
+        <span *ngIf="!userForm.get('firstname').valid && userForm.get('firstname').touched">Please enter FirstName</span>
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="LastName" formControlName="lastname"
+            [errorStateMatcher]="matcher">
+        <mat-error>
+            <span *ngIf="!userForm.get('lastname').valid && userForm.get('lastname').touched">Please enter LastName</span>
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="UserName" formControlName="company"
+            [errorStateMatcher]="matcher">
+    <mat-error>
+        <span *ngIf="!userForm.get('company').valid && userForm.get('company').touched">Please enter UserName</span>
+    </mat-error>
+    </mat-form-field>
+      
+        
+    
+        <mat-form-field class="example-full-width">
+            <input matInput placeholder="Password" formControlName="roxcode"
+                   [errorStateMatcher]="matcher">
+            <mat-error>
+              <span *ngIf="!userForm.get('roxcode').valid && userForm.get('roxcode').touched">Please enter Password</span>
+            </mat-error>
+          </mat-form-field>
+    
+   <div class="button-row">
+          <button type="submit" [disabled]="!userForm.valid" mat-raised-button color="primary">Register</button>
+        </div>
+      </form>
+    
+    </div>
+    

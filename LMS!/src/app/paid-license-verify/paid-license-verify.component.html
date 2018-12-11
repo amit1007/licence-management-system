@@ -1,0 +1,52 @@
+<div class="button-row">
+    <a [routerLink]="['/Dashbord']"><mat-icon>l<i class="glyphicon glyphicon-new-window"></i>ist</mat-icon></a>
+      </div>
+      <br><br>
+      <div class=" well well well-lg col-lg-6 col-lg-offset-3">
+            <h3 class="text-center">LMS  Subscription Verification  </h3>
+    <form [formGroup]="userForm" (ngSubmit)="onFormSubmit(userForm.value)">
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Email" formControlName="firstname"
+            [errorStateMatcher]="matcher">
+        <mat-error>
+        <span *ngIf="!userForm.get('firstname').valid && userForm.get('firstname').touched">Please enter Email</span>
+        </mat-error>
+    </mat-form-field>
+ 
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="RoxCode" formControlName="firstname"
+    [errorStateMatcher]="matcher">
+    <mat-error>
+        <span *ngIf="!userForm.get('firstname').valid && userForm.get('firstname').touched">Please enter RoxCode</span>
+        </mat-error>
+</mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+        <input matInput placeholder="Contact" formControlName="lastname"
+            [errorStateMatcher]="matcher">
+        <mat-error>
+            <span *ngIf="!userForm.get('lastname').valid && userForm.get('lastname').touched">Please enter Contact</span>
+        </mat-error>
+    </mat-form-field>
+    
+    <mat-form-field class="example-full-width">
+    <input matInput placeholder="OTP" formControlName="company"
+            [errorStateMatcher]="matcher">
+    <mat-error>
+        <span *ngIf="!userForm.get('company').valid && userForm.get('company').touched">Please enter OTP</span>
+    </mat-error>
+    </mat-form-field>
+      
+        <div class="button-row">
+          <button type="submit" [disabled]="!userForm.valid" mat-raised-button color="primary">Verify</button>
+        </div>
+      </form>
+    
+    </div>
+    
+
+
+
+
+
+   
